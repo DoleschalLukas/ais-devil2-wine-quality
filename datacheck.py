@@ -3,12 +3,11 @@ import numpy as np
 
 INPUT_FILE = "data/winequality.parquet"
 
-pd.read_parquet(INPUT_FILE)
+data = pd.read_parquet(INPUT_FILE)
 
-def fetch_data():
-    df = pd.read_parquet(INPUT_FILE)
-    print("fetched data")
-    print(df.head(5))
-
-
-fetch_data()
+print("info")
+print(data.info())
+print("describe")
+print(data.describe())
+print("null values")
+print(data.isnull().sum())
